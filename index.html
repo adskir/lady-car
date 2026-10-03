@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lady Car — Lucidatura e detailing auto a domicilio a Roma</title>
 <meta name="description" content="Lucidatura professionale, correzione della vernice, coating ceramico e ripristino fari a domicilio a Roma. Preventivo gratuito su WhatsApp: mandaci le foto della tua auto.">
 <link rel="canonical" href="https://lady-car.it/">
-<meta name="theme-color" content="#1E2427">
+<meta name="theme-color" content="#15161A">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="/icon-512.png" sizes="512x512" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -22,8 +22,9 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="preload" href="/fonts/gloock-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/figtree-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/site.css">
 
 <script type="application/ld+json">
 {
@@ -73,464 +74,505 @@
   ]
 }
 </script>
-
-<style>
-@font-face{font-family:"Gloock";font-weight:400;font-display:swap;src:url(/fonts/gloock-latin-400-normal.woff2) format("woff2")}
-@font-face{font-family:"Figtree";font-weight:400;font-display:swap;src:url(/fonts/figtree-latin-400-normal.woff2) format("woff2")}
-@font-face{font-family:"Figtree";font-weight:500;font-display:swap;src:url(/fonts/figtree-latin-500-normal.woff2) format("woff2")}
-@font-face{font-family:"Figtree";font-weight:600;font-display:swap;src:url(/fonts/figtree-latin-600-normal.woff2) format("woff2")}
-
-:root{
-  --graphite:#1E2427;
-  --graphite-2:#262E32;
-  --gunmetal:#56636A;
-  --mist:#E4E8E9;
-  --pearl:#F6F7F7;
-  --ink:#14191B;
-  --pad:#E8A33D;
-  --pad-dark:#C9831F;
-  --line-dark:rgba(246,247,247,.14);
-  --line-light:rgba(20,25,27,.14);
-  --radius-lg:18px;
-  --radius-md:10px;
-  --radius-sm:6px;
-  --wrap:min(1180px, calc(100% - 32px));
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:92px}
-body{margin:0;background:var(--mist);color:var(--ink);font:400 17px/1.6 "Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
-img{display:block;max-width:100%;height:auto}
-a{color:inherit}
-h1,h2,h3{font-family:"Gloock",Georgia,serif;font-weight:400;line-height:1.08;margin:0}
-p{margin:0}
-.wrap{width:var(--wrap);margin-inline:auto}
-:focus-visible{outline:2px solid var(--pad);outline-offset:3px;border-radius:4px}
-.skip{position:absolute;left:-999px;top:8px;background:var(--pad);color:var(--ink);padding:8px 14px;border-radius:var(--radius-md);z-index:200}
-.skip:focus{left:8px}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:var(--radius-md);font:600 16px/1 "Figtree",sans-serif;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background-color .2s,border-color .2s,color .2s}
-.btn-pad{background:var(--pad);color:var(--ink)}
-.btn-pad:hover{background:#F2B356}
-.btn-ghost{border-color:var(--line-dark);color:var(--pearl)}
-.btn-ghost:hover{border-color:var(--pearl)}
-.btn svg{width:20px;height:20px;fill:currentColor}
-
-/* header */
-.top{position:sticky;top:0;z-index:50;background:rgba(30,36,39,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line-dark);color:var(--pearl)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:80px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.brand img{height:56px;width:auto;filter:drop-shadow(0 0 6px rgba(255,255,255,.35))}
-.brand span{font-family:"Gloock",Georgia,serif;font-size:21px;letter-spacing:.01em}
-.nav{display:flex;gap:28px;font-size:15px;font-weight:500}
-.nav a{text-decoration:none;color:rgba(246,247,247,.72)}
-.nav a:hover{color:var(--pearl)}
-.top .btn{min-height:42px;padding:0 18px;font-size:15px}
-
-/* hero */
-.hero{background:var(--graphite);color:var(--pearl);overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:stretch;min-height:min(720px,calc(100svh - 80px))}
-.hero-copy{padding:72px 56px 72px max(16px, calc((100vw - 1180px)/2));display:flex;flex-direction:column;justify-content:center}
-.hero h1{font-size:clamp(46px,6.2vw,88px);letter-spacing:-.01em;max-width:11ch;
-  background:linear-gradient(105deg,var(--pearl) 0%,var(--pearl) 42%,#fff 47%,var(--pad) 50%,#fff 53%,var(--pearl) 58%,var(--pearl) 100%);
-  background-size:300% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;color:transparent;
-  animation:sheen 2.2s cubic-bezier(.45,.05,.25,1) .5s 1 both}
-@keyframes sheen{from{background-position:100% 0}to{background-position:0 0}}
-.hero-lead{margin-top:26px;font-size:clamp(17px,1.5vw,20px);color:rgba(246,247,247,.78);max-width:46ch}
-.hero-actions{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px}
-.hero-note{margin-top:28px;font-size:15px;color:rgba(246,247,247,.6);max-width:44ch}
-.hero-photo{position:relative;margin:0}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:40% 50%}
-.hero-photo figcaption{position:absolute;left:24px;bottom:24px;max-width:250px;background:rgba(30,36,39,.86);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius-md);padding:14px 18px;font-family:"Gloock",Georgia,serif;font-size:19px;line-height:1.25}
-
-/* sections */
-.section{padding:clamp(72px,9vw,120px) 0}
-.section-head{max-width:640px;margin-bottom:48px}
-.section-head h2{font-size:clamp(36px,4.4vw,56px)}
-.section-head p{margin-top:16px;color:var(--gunmetal);font-size:18px}
-
-/* prices */
-.prices{border-top:1px solid var(--line-light)}
-.price-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) 150px 130px;gap:32px;align-items:baseline;padding:30px 0;border-bottom:1px solid var(--line-light)}
-.price-row h3{font-size:30px}
-.price-row .what{color:#3A4549}
-.price-row .what ul{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
-.price-row .what li{font-size:14px;background:var(--pearl);border:1px solid var(--line-light);border-radius:var(--radius-sm);padding:3px 10px}
-.price-row .life{font-size:15px;color:var(--gunmetal)}
-.price-row .life strong{display:block;color:var(--ink);font-weight:600;font-size:16px}
-.price-row .eur{font-family:"Gloock",Georgia,serif;font-size:34px;text-align:right;white-space:nowrap}
-.price-row .eur small{font-family:"Figtree",sans-serif;font-size:14px;color:var(--gunmetal);margin-right:6px}
-.prices-note{margin-top:24px;font-size:15px;color:var(--gunmetal);max-width:60ch}
-
-/* method */
-.method{background:var(--pearl)}
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px;counter-reset:s}
-.steps li{counter-increment:s;border-top:2px solid var(--ink);padding-top:20px}
-.steps li::before{content:counter(s);display:block;font-family:"Gloock",Georgia,serif;font-size:44px;line-height:1;color:var(--pad-dark);margin-bottom:16px}
-.steps h3{font-size:22px;line-height:1.2}
-.steps p{margin-top:10px;font-size:15.5px;color:#3A4549}
-
-/* work */
-.work-grid{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:20px}
-.work-grid figure{margin:0}
-.work-grid figure:first-child{grid-row:span 2}
-.work-grid img{width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg)}
-.work-grid figure:first-child img{aspect-ratio:auto;min-height:100%}
-.work-grid figure:not(:first-child) img{aspect-ratio:4/3}
-.work-grid figure{display:flex;flex-direction:column;gap:10px}
-.work-grid figure:first-child{height:100%}
-.work-grid figure:first-child img{flex:1;min-height:0}
-.work-grid figcaption{font-size:15px;color:var(--gunmetal)}
-
-/* faq */
-.faq{background:var(--pearl)}
-.faq-list{max-width:820px;border-top:1px solid var(--line-light)}
-.faq-list details{border-bottom:1px solid var(--line-light)}
-.faq-list summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-family:"Gloock",Georgia,serif;font-size:23px;line-height:1.25}
-.faq-list summary::-webkit-details-marker{display:none}
-.faq-list summary::after{content:"";flex:none;width:14px;height:14px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg) translate(-3px,-3px);transition:transform .25s}
-.faq-list details[open] summary::after{transform:rotate(225deg) translate(-3px,-3px)}
-.faq-list details p{padding:0 0 26px;max-width:66ch;color:#3A4549}
-
-/* contact */
-.contact{background:var(--graphite);color:var(--pearl)}
-.contact .section-head p{color:rgba(246,247,247,.72)}
-.contact-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
-.contact-list{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:18px}
-.contact-list li{display:grid;grid-template-columns:110px 1fr;gap:12px;padding-bottom:18px;border-bottom:1px solid var(--line-dark);font-size:17px}
-.contact-list span{color:rgba(246,247,247,.55);font-size:15px}
-.contact-list a{text-decoration:none}
-.contact-list a:hover{color:var(--pad)}
-.form{background:var(--graphite-2);border:1px solid var(--line-dark);border-radius:var(--radius-lg);padding:clamp(22px,3vw,36px);display:grid;gap:18px}
-.form .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.form label{display:grid;gap:7px;font-size:14px;font-weight:500;color:rgba(246,247,247,.75)}
-.form input,.form select,.form textarea{width:100%;font:400 16px/1.4 "Figtree",sans-serif;color:var(--pearl);background:var(--graphite);border:1px solid var(--line-dark);border-radius:var(--radius-md);padding:13px 14px}
-.form select option{background:var(--graphite)}
-.form textarea{resize:vertical;min-height:110px}
-.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--pad)}
-.form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.form .legal{font-size:13.5px;color:rgba(246,247,247,.55)}
-.form .legal a{color:rgba(246,247,247,.8)}
-.form .btn{width:100%}
-.form-status{font-size:15px;min-height:1.4em}
-.form-status.ok{color:#9BD8A6}
-.form-status.err{color:#F2A08C}
-
-/* footer */
-footer{background:#171C1E;color:rgba(246,247,247,.6);padding:40px 0 34px;font-size:14.5px}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px}
-.foot-brand{display:flex;align-items:center;gap:16px}
-.foot-brand img{width:150px;height:auto;filter:drop-shadow(0 0 8px rgba(255,255,255,.3))}
-footer nav{display:flex;gap:22px}
-footer a{text-decoration:none}
-footer a:hover{color:var(--pearl)}
-.site-credit{width:100%;text-align:center;margin-top:18px;padding-top:18px;border-top:1px solid var(--line-dark)}
-.site-credit a{font-family:"Gloock",Georgia,serif;font-size:14px;color:rgba(246,247,247,.4)}
-.site-credit a:hover{color:var(--pad)}
-
-/* whatsapp float */
-.wa-float{position:fixed;right:22px;bottom:22px;z-index:90;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(37,211,102,.4);transition:transform .2s}
-.wa-float:hover{transform:scale(1.08)}
-.wa-float svg{width:30px;height:30px;fill:#fff}
-
-/* cookie notice */
-.cookie{position:fixed;left:16px;bottom:16px;z-index:80;max-width:420px;background:var(--pearl);color:var(--ink);border-radius:var(--radius-md);box-shadow:0 10px 30px rgba(0,0,0,.25);padding:16px 18px;display:none;gap:12px;align-items:center;font-size:14.5px;line-height:1.45}
-.cookie.show{display:flex}
-.cookie button{flex:none;font:600 14px/1 "Figtree",sans-serif;background:var(--ink);color:var(--pearl);border:0;border-radius:var(--radius-md);padding:11px 16px;cursor:pointer}
-
-/* responsive */
-@media (max-width:1024px){
-  .nav{display:none}
-  .hero-grid{grid-template-columns:1fr;min-height:0}
-  .hero-copy{padding:56px 16px 48px}
-  .hero-photo{aspect-ratio:4/3}
-  .price-row{grid-template-columns:1fr auto;gap:10px 24px}
-  .price-row h3{grid-column:1}
-  .price-row .eur{grid-column:2;grid-row:1}
-  .price-row .what,.price-row .life{grid-column:1 / -1}
-  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .contact-grid{grid-template-columns:1fr;gap:48px}
-}
-@media (max-width:640px){
-  body{font-size:16px}
-  .brand span{display:none}
-  .hero-actions .btn{flex:1 1 100%}
-  .hero-photo figcaption{left:12px;bottom:12px;font-size:17px}
-  .steps{grid-template-columns:1fr}
-  .work-grid{grid-template-columns:1fr}
-  .work-grid figure:first-child{grid-row:auto}
-  .work-grid figure:first-child img{aspect-ratio:4/3}
-  .form .row2{grid-template-columns:1fr}
-  .contact-list li{grid-template-columns:1fr;gap:2px}
-  .cookie{right:90px;left:12px;bottom:12px}
-  footer .wrap{flex-direction:column;align-items:flex-start}
-}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .hero h1{animation:none;background:none;color:var(--pearl)}
-  *{transition:none!important}
-}
-</style>
+<script>document.documentElement.classList.remove('no-js')</script>
 </head>
-<body>
-<a class="skip" href="#main">Vai al contenuto</a>
+<body class="bg-ink text-paper">
 
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="/" aria-label="Lady Car, torna all'inizio">
-      <img src="/img/logo.png" alt="" width="520" height="269">
-      <span>Maestra di Detailing</span>
-    </a>
-    <nav class="nav" aria-label="Sezioni">
-      <a href="#prezzi">Prezzi</a>
-      <a href="#metodo">Metodo</a>
-      <a href="#lavori">Lavori</a>
-      <a href="#domande">Domande</a>
-      <a href="#contatti">Contatti</a>
-    </nav>
-    <a class="btn btn-pad" href="https://wa.me/393805826738?text=Ciao%20Lady%20Car%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener">WhatsApp</a>
-  </div>
-</header>
-
-<main id="main">
-  <section class="hero">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <h1>Il riflesso perfetto si ottiene a mano.</h1>
-        <p class="hero-lead">Lucidatura, correzione della vernice e protezioni ceramiche a domicilio in tutta Roma. Togliamo swirl, ologrammi e opacità e ti riconsegniamo l'auto con una brillantezza che si vede.</p>
-        <div class="hero-actions">
-          <a class="btn btn-pad" href="https://wa.me/393805826738?text=Ciao%20Lady%20Car%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.7 2.2 13.9 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5C18.2 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
-            Chiedi un preventivo
-          </a>
-          <a class="btn btn-ghost" href="#prezzi">Vedi i prezzi</a>
+  <!-- Nav -->
+  <header class="fixed inset-x-0 top-0 z-50 bg-ink/80 border-b border-hair backdrop-blur">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-20 items-center justify-between">
+        <a href="#home" class="flex items-center gap-3" aria-label="Lady Car, torna all'inizio">
+          <img src="/img/logo.png" alt="" width="520" height="269" class="h-11 w-auto" />
+          <span class="logo-text">Maestra di Detailing</span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-8 text-[.8rem] font-semibold tracking-wide uppercase text-muted" aria-label="Sezioni">
+          <a href="#servizi" class="hover:text-paper transition">Servizi</a>
+          <a href="#processo" class="hover:text-paper transition">Processo</a>
+          <a href="#prezzi" class="hover:text-paper transition">Prezzi</a>
+          <a href="#gallery" class="hover:text-paper transition">Gallery</a>
+          <a href="#faq" class="hover:text-paper transition">FAQ</a>
+          <a href="#contatti" class="hover:text-paper transition">Contatti</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="https://wa.me/393805826738?text=Ciao%20Lady%20Car%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener" class="rounded-full bg-rosso px-5 py-2.5 text-sm font-bold hover:bg-rossobright transition">WhatsApp</a>
+          <a href="tel:+393805826738" class="hidden sm:inline rounded-full border border-hair px-5 py-2.5 text-sm font-bold hover:border-oro hover:text-oro transition">Chiama</a>
         </div>
-        <p class="hero-note">Mandaci due o tre foto dell'auto su WhatsApp: ti rispondiamo con un prezzo e una data.</p>
       </div>
-      <figure class="hero-photo">
-        <picture>
-          <source media="(max-width:640px)" srcset="/img/lucidatura-hero-m.webp">
-          <img src="/img/lucidatura-hero.webp" alt="La detailer di Lady Car lucida la fiancata di un'auto con la lucidatrice rotativa" width="1600" height="1200" fetchpriority="high" decoding="async">
-        </picture>
-        <figcaption>Dettagli che solo una donna sa vedere.</figcaption>
-      </figure>
     </div>
-  </section>
+  </header>
 
-  <section class="section" id="prezzi" aria-labelledby="prezzi-t">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="prezzi-t">Servizi e prezzi</h2>
-        <p>Ogni intervento comprende lavaggio a mano e decontaminazione della carrozzeria. Il prezzo finale dipende da dimensioni, colore e stato della vernice.</p>
-      </div>
-      <div class="prices">
-        <article class="price-row">
-          <h3>One-Step</h3>
-          <div class="what">Rinfresca la vernice e toglie opacità e difetti leggeri. Ideale per auto nuove o ben tenute.
-            <ul><li>Decontaminazione chimica e clay</li><li>Lucidatura unica a finitura</li></ul>
+  <main>
+  <!-- Hero -->
+  <section id="home" class="relative isolate pt-40 pb-20 overflow-hidden wash">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-14 items-center">
+        <div>
+          <p class="eyebrow">Atelier di detailing — Roma</p>
+          <h1 class="mt-5 font-serif font-medium text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] tracking-tight">
+            Il riflesso perfetto si vede a occhio nudo.
+            <span class="block text-oro">Si ottiene a mano.</span>
+          </h1>
+          <p class="mt-6 text-muted text-lg max-w-lg">
+            Correggiamo swirl, ologrammi e opacità con lucidatura professionale e protezioni ceramiche. Veniamo noi, a domicilio, in tutta Roma.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-4">
+            <a href="#contatti" class="rounded-full bg-rosso px-7 py-3.5 font-bold hover:bg-rossobright transition">Prenota un preventivo</a>
+            <a href="#servizi" class="rounded-full border border-hair px-7 py-3.5 font-bold hover:border-oro hover:text-oro transition">Vedi servizi</a>
           </div>
-          <p class="life"><strong>Sigillante</strong>dura circa 6 mesi</p>
-          <p class="eur"><small>da</small>150 €</p>
-        </article>
-        <article class="price-row">
-          <h3>Correzione in 2 fasi</h3>
-          <div class="what">Taglio e finitura per togliere swirl marcati e micrograffi. Ideale per le vernici scure.
-            <ul><li>Mascheratura di plastiche e cromature</li><li>Taglio controllato</li><li>Polish di finitura</li></ul>
+          <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted">
+            <div class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-oro"></span> Preventivo gratuito su foto via WhatsApp</div>
+            <div>Lunedì–sabato, 9:00–19:00</div>
           </div>
-          <p class="life"><strong>Sigillante</strong>dura circa 12 mesi</p>
-          <p class="eur"><small>da</small>200 €</p>
-        </article>
-        <article class="price-row">
-          <h3>Coating ceramico</h3>
-          <div class="what">Protezione dagli agenti atmosferici con effetto idrorepellente. Ottimo su un'auto nuova o dopo una correzione.
-            <ul><li>Preparazione con panel wipe</li><li>Applicazione in 1 o 2 strati</li></ul>
-          </div>
-          <p class="life"><strong>Protezione</strong>fino a 24 mesi</p>
-          <p class="eur"><small>da</small>250 €</p>
-        </article>
-        <article class="price-row">
-          <h3>Ripristino fari</h3>
-          <div class="what">Restituisce trasparenza ai fari opachi o ingialliti e li protegge dal ritorno dell'ingiallimento.
-            <ul><li>Carteggiatura</li><li>Lucidatura</li><li>Protezione UV</li></ul>
-          </div>
-          <p class="life"><strong>Per coppia</strong>di fari anteriori</p>
-          <p class="eur"><small>da</small>30 €</p>
-        </article>
-      </div>
-      <p class="prices-note">Fuori dal Grande Raccordo Anulare il prezzo può variare per lo spostamento. Il preventivo su foto è gratuito e senza impegno.</p>
-    </div>
-  </section>
-
-  <section class="section method" id="metodo" aria-labelledby="metodo-t">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="metodo-t">Come lavoriamo</h2>
-        <p>Dalla prima foto alla consegna, in cinque passaggi.</p>
-      </div>
-      <ol class="steps">
-        <li><h3>Preventivo su foto</h3><p>Ci mandi le foto su WhatsApp, valutiamo la vernice e ti diamo un prezzo.</p></li>
-        <li><h3>Veniamo da te</h3><p>Lavoriamo dove ti è più comodo: sotto casa, in garage o in ufficio.</p></li>
-        <li><h3>Preparazione</h3><p>Prelavaggio, decontaminazione e mascheratura di plastiche e cromature.</p></li>
-        <li><h3>Correzione</h3><p>Compound e polish in più passaggi, fino alla finitura a specchio.</p></li>
-        <li><h3>Protezione e consegna</h3><p>Sigillante o coating, controllo finale e foto del risultato.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section" id="lavori" aria-labelledby="lavori-t">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="lavori-t">Al lavoro</h2>
-        <p>Le foto di questa pagina sono nostre, scattate durante i lavori. Niente immagini di repertorio.</p>
-      </div>
-      <div class="work-grid">
-        <figure>
-          <img src="/img/lucidatura-rotativa.webp" alt="Due detailer lucidano la fiancata posteriore di una berlina grigia" width="1200" height="900" loading="lazy" decoding="async">
-          <figcaption>Correzione della vernice con lucidatrice rotativa</figcaption>
-        </figure>
-        <figure>
-          <img src="/img/ritocco-vernice.webp" alt="Ritocco a pennello di un graffio sul paraurti di un'auto bianca" width="1200" height="900" loading="lazy" decoding="async">
-          <figcaption>Ritocco di un graffio sul paraurti</figcaption>
-        </figure>
-        <figure>
-          <img src="/img/ripristino-fari.webp" alt="Faro anteriore mascherato con nastro carta prima del ripristino" width="1200" height="893" loading="lazy" decoding="async">
-          <figcaption>Faro mascherato prima del ripristino</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="section faq" id="domande" aria-labelledby="domande-t">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="domande-t">Domande frequenti</h2>
-      </div>
-      <div class="faq-list">
-        <details>
-          <summary>Quanto costa lucidare un'auto a Roma?</summary>
-          <p>Una lucidatura One-Step parte da 150 €, la correzione in 2 fasi da 200 €, il coating ceramico da 250 € e il ripristino dei fari da 30 €. Il prezzo finale dipende da dimensioni, colore e condizioni della vernice: mandaci le foto su WhatsApp per un preventivo gratuito.</p>
-        </details>
-        <details>
-          <summary>Lavorate a domicilio?</summary>
-          <p>Sì, veniamo noi in tutta Roma. Fuori dal Grande Raccordo Anulare il prezzo può variare: chiedi la disponibilità quando prenoti.</p>
-        </details>
-        <details>
-          <summary>Quanto dura il trattamento?</summary>
-          <p>Il sigillante della lucidatura One-Step dura circa 6 mesi, quello della correzione in 2 fasi circa 12 mesi. Il coating ceramico protegge fino a 24 mesi con una manutenzione corretta.</p>
-        </details>
-        <details>
-          <summary>La lucidatura rimuove tutti i graffi?</summary>
-          <p>Rimuove swirl, ologrammi e micrograffi. I segni profondi vanno valutati dal vivo: a volte la carteggiatura non è consigliata perché assottiglia troppo la vernice.</p>
-        </details>
-        <details>
-          <summary>Come si prenota?</summary>
-          <p>Mandaci su WhatsApp due o tre foto dell'auto alla luce del giorno, con marca e modello. Ti rispondiamo con un preventivo e una data.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section class="section contact" id="contatti" aria-labelledby="contatti-t">
-    <div class="wrap contact-grid">
-      <div>
-        <div class="section-head">
-          <h2 id="contatti-t">Parliamo della tua auto</h2>
-          <p>Il modo più veloce è WhatsApp con qualche foto. Se preferisci, compila il modulo e ti ricontattiamo noi.</p>
         </div>
-        <ul class="contact-list">
-          <li><span>WhatsApp</span><a href="https://wa.me/393805826738?text=Ciao%20Lady%20Car%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener">Scrivici su WhatsApp</a></li>
-          <li><span>Telefono</span><a href="tel:+393805826738">+39 380 582 6738</a></li>
-          <li><span>Zona</span>Roma e dintorni, a domicilio</li>
-          <li><span>Orari</span>Lunedì–sabato, 9:00–19:00</li>
-        </ul>
+        <div class="relative">
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden ring-1 ring-hair shadow-2xl">
+            <picture>
+              <source media="(max-width:640px)" srcset="/img/lucidatura-hero-m.webp">
+              <img src="/img/lucidatura-hero.webp" alt="La detailer di Lady Car lucida la fiancata di un'auto con la lucidatrice rotativa" width="1600" height="1200" fetchpriority="high" decoding="async" class="h-full w-full object-cover" />
+            </picture>
+          </div>
+          <div class="absolute -bottom-6 left-3 sm:-left-6 max-w-[220px] rounded-xl bg-panel px-4 py-3 text-sm ring-1 ring-hair shadow-xl">
+            <span class="block font-serif text-oro text-base">Dettagli</span>
+            che solo una donna sa vedere.
+          </div>
+        </div>
       </div>
 
-      <form class="form" id="form" action="https://formspree.io/f/mlgkbbkv" method="POST">
-        <input type="hidden" name="_subject" value="Nuova richiesta da lady-car.it">
-        <input type="hidden" name="sito" value="lady-car.it">
-        <div class="hp" aria-hidden="true"><label>Lascia vuoto<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
-        <div class="row2">
-          <label>Nome<input type="text" name="nome" required autocomplete="name"></label>
-          <label>Telefono o email<input type="text" name="contatto" required autocomplete="tel"></label>
+      <div class="mt-16 swatch reveal" aria-hidden="true">
+        <span style="background:#8C3B2E"></span>
+        <span style="background:#B24A36"></span>
+        <span style="background:#C9A66B"></span>
+        <span style="background:#9B966E"></span>
+        <span style="background:#5B5D63"></span>
+        <span style="background:#F2EFEA"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust badges -->
+  <section class="py-14 border-t border-hair" aria-label="In breve">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="reveal rounded-xl bg-panel px-5 pt-4 pb-5 ring-1 ring-hair border-t-2" style="border-top-color:#8C3B2E">
+          <p class="text-xs uppercase tracking-widest text-muted">Preventivo</p>
+          <p class="mt-1 font-serif text-lg">Gratuito, su foto</p>
         </div>
-        <div class="row2">
-          <label>Auto<input type="text" name="auto" placeholder="Marca, modello, colore"></label>
-          <label>Servizio
-            <select name="servizio">
+        <div class="reveal rounded-xl bg-panel px-5 pt-4 pb-5 ring-1 ring-hair border-t-2" style="border-top-color:#C9A66B">
+          <p class="text-xs uppercase tracking-widest text-muted">Lavoro</p>
+          <p class="mt-1 font-serif text-lg">Lucidatura a mano</p>
+        </div>
+        <div class="reveal rounded-xl bg-panel px-5 pt-4 pb-5 ring-1 ring-hair border-t-2" style="border-top-color:#9B966E">
+          <p class="text-xs uppercase tracking-widest text-muted">Al lavoro</p>
+          <p class="mt-1 font-serif text-lg">Maestra di Detailing</p>
+        </div>
+        <div class="reveal rounded-xl bg-panel px-5 pt-4 pb-5 ring-1 ring-hair border-t-2" style="border-top-color:#5B5D63">
+          <p class="text-xs uppercase tracking-widest text-muted">Comodità</p>
+          <p class="mt-1 font-serif text-lg">Servizio a domicilio</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servizi -->
+  <section id="servizi" class="py-24 border-t border-hair">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-xl reveal">
+        <p class="eyebrow">Servizi</p>
+        <h2 class="mt-3 font-serif text-3xl sm:text-4xl">Lucidatura e detailing su misura</h2>
+        <p class="mt-3 text-muted">Scegli il pacchetto adatto alle condizioni della tua auto. Ogni intervento include lavaggio a mano e decontaminazione completa.</p>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-px bg-hair rounded-2xl overflow-hidden ring-1 ring-hair">
+        <div class="reveal bg-ink p-7 border-t-2" style="border-top-color:#8C3B2E">
+          <h3 class="font-serif text-xl">One-Step</h3>
+          <p class="mt-2 text-muted text-sm">Rinfresca la vernice, rimuove opacità e lievi difetti. Ideale per auto nuove o ben tenute.</p>
+          <ul class="chips mt-5 space-y-2 text-sm text-muted" style="--chip:#8C3B2E">
+            <li>Decontaminazione chimica + clay</li>
+            <li>Lucidatura unica a finitura</li>
+            <li>Sigillante 6 mesi</li>
+          </ul>
+          <div class="mt-7 flex items-end justify-between">
+            <span class="font-serif text-2xl">da 150 €</span>
+            <a href="#contatti" class="rounded-full border border-hair px-4 py-2 text-sm font-bold hover:border-oro hover:text-oro transition">Prenota</a>
+          </div>
+        </div>
+        <div class="reveal bg-ink p-7 border-t-2" style="border-top-color:#C9A66B">
+          <h3 class="font-serif text-xl">Correzione 2 Fasi</h3>
+          <p class="mt-2 text-muted text-sm">Rimuove swirl marcati e micrograffi con taglio + finitura per una brillantezza profonda.</p>
+          <ul class="chips mt-5 space-y-2 text-sm text-muted" style="--chip:#C9A66B">
+            <li>Mascheratura parti sensibili</li>
+            <li>Taglio controllato + polish di finitura</li>
+            <li>Sigillante 12 mesi</li>
+          </ul>
+          <div class="mt-7 flex items-end justify-between">
+            <span class="font-serif text-2xl">da 200 €</span>
+            <a href="#contatti" class="rounded-full border border-hair px-4 py-2 text-sm font-bold hover:border-oro hover:text-oro transition">Prenota</a>
+          </div>
+        </div>
+        <div class="reveal bg-ink p-7 border-t-2" style="border-top-color:#5B5D63">
+          <h3 class="font-serif text-xl">Coating Ceramico</h3>
+          <p class="mt-2 text-muted text-sm">Protezione avanzata contro agenti atmosferici, con effetto idrorepellente e gloss intenso.</p>
+          <ul class="chips mt-5 space-y-2 text-sm text-muted" style="--chip:#5B5D63">
+            <li>Prep panel wipe</li>
+            <li>Applicazione 1–2 layer</li>
+            <li>Protezione fino a 24 mesi</li>
+          </ul>
+          <div class="mt-7 flex items-end justify-between">
+            <span class="font-serif text-2xl">da 250 €</span>
+            <a href="#contatti" class="rounded-full border border-hair px-4 py-2 text-sm font-bold hover:border-oro hover:text-oro transition">Prenota</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Processo -->
+  <section id="processo" class="py-24 border-t border-hair">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="eyebrow reveal">Il metodo</p>
+      <h2 class="mt-3 font-serif text-3xl sm:text-4xl reveal">Come lavoriamo</h2>
+
+      <div class="mt-14 relative">
+        <div class="hidden md:block absolute left-[calc(10%-1px)] top-2 bottom-2 w-px bg-hair"></div>
+        <ol class="space-y-10">
+          <li class="reveal grid md:grid-cols-[10%,1fr] gap-4 md:gap-10 items-start">
+            <p class="font-serif text-4xl text-rosso">01</p>
+            <div class="border-b border-hair pb-8">
+              <h3 class="font-serif text-xl">Valutazione online &amp; preventivo</h3>
+              <p class="mt-2 text-muted max-w-2xl">Invia le foto su WhatsApp: valutiamo lo stato della vernice e ti diamo un prezzo.</p>
+            </div>
+          </li>
+          <li class="reveal grid md:grid-cols-[10%,1fr] gap-4 md:gap-10 items-start">
+            <p class="font-serif text-4xl text-oro">02</p>
+            <div class="border-b border-hair pb-8">
+              <h3 class="font-serif text-xl">Veniamo da te</h3>
+              <p class="mt-2 text-muted max-w-2xl">Lavoriamo dove ti è più comodo: sotto casa, in garage o in ufficio.</p>
+            </div>
+          </li>
+          <li class="reveal grid md:grid-cols-[10%,1fr] gap-4 md:gap-10 items-start">
+            <p class="font-serif text-4xl" style="color:#9B966E">03</p>
+            <div class="border-b border-hair pb-8">
+              <h3 class="font-serif text-xl">Preparazione accurata</h3>
+              <p class="mt-2 text-muted max-w-2xl">Prelavaggio, decontaminazione e mascheratura di plastiche e cromature.</p>
+            </div>
+          </li>
+          <li class="reveal grid md:grid-cols-[10%,1fr] gap-4 md:gap-10 items-start">
+            <p class="font-serif text-4xl" style="color:#B24A36">04</p>
+            <div class="border-b border-hair pb-8">
+              <h3 class="font-serif text-xl">Correzione profonda</h3>
+              <p class="mt-2 text-muted max-w-2xl">Compound abrasivi, lucidatura in più passaggi e rifinitura a specchio.</p>
+            </div>
+          </li>
+          <li class="reveal grid md:grid-cols-[10%,1fr] gap-4 md:gap-10 items-start">
+            <p class="font-serif text-4xl" style="color:#5B5D63">05</p>
+            <div>
+              <h3 class="font-serif text-xl">Protezione &amp; consegna finale</h3>
+              <p class="mt-2 text-muted max-w-2xl">Sigillante o coating, gloss intenso e foto finali.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="py-24 border-t border-hair">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-4 reveal">
+        <div>
+          <p class="eyebrow">Al lavoro</p>
+          <h2 class="mt-3 font-serif text-3xl sm:text-4xl">I nostri lavori recenti</h2>
+          <p class="mt-3 text-muted max-w-xl">Le foto sono nostre, scattate durante i lavori. Niente immagini di repertorio.</p>
+        </div>
+        <a href="https://wa.me/393805826738?text=Ciao%20Lady%20Car%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener" class="rounded-full border border-hair px-5 py-2.5 font-bold text-sm hover:border-oro hover:text-oro transition">Chiedi altre foto</a>
+      </div>
+
+      <div class="grid mt-10 md:grid-cols-3 gap-6">
+        <figure class="reveal">
+          <div class="aspect-[4/3] rounded-xl overflow-hidden ring-1 ring-hair">
+            <img src="/img/lucidatura-rotativa.webp" alt="Due detailer lucidano la fiancata posteriore di una berlina grigia" width="1200" height="900" loading="lazy" decoding="async" class="h-full w-full object-cover" />
+          </div>
+          <figcaption class="mt-3 text-xs uppercase tracking-widest text-muted">Correzione con rotativa</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="aspect-[4/3] rounded-xl overflow-hidden ring-1 ring-hair">
+            <img src="/img/ritocco-vernice.webp" alt="Ritocco a pennello di un graffio sul paraurti di un'auto bianca" width="1200" height="900" loading="lazy" decoding="async" class="h-full w-full object-cover" />
+          </div>
+          <figcaption class="mt-3 text-xs uppercase tracking-widest text-muted">Ritocco vernice</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="aspect-[4/3] rounded-xl overflow-hidden ring-1 ring-hair">
+            <img src="/img/ripristino-fari.webp" alt="Faro anteriore mascherato con nastro carta prima del ripristino" width="1200" height="893" loading="lazy" decoding="async" class="h-full w-full object-cover" />
+          </div>
+          <figcaption class="mt-3 text-xs uppercase tracking-widest text-muted">Ripristino fari</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prezzi -->
+  <section id="prezzi" class="py-24 border-t border-hair">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="eyebrow reveal">Listino</p>
+      <h2 class="mt-3 font-serif text-3xl sm:text-4xl reveal">Prezzi trasparenti</h2>
+      <p class="mt-3 text-muted max-w-2xl reveal">I prezzi possono variare in base a dimensioni, colore e condizioni dell'auto. Fuori dal Grande Raccordo Anulare può cambiare il costo dello spostamento. Preventivo gratuito su foto via WhatsApp.</p>
+
+      <div class="mt-10 reveal">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-hair text-left">
+              <th class="py-3 font-serif text-base font-normal">Servizio</th>
+              <th class="py-3 font-serif text-base font-normal">Dettagli</th>
+              <th class="py-3 font-serif text-base font-normal text-right sm:text-left">Da</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-hair align-top">
+              <td class="py-5 pr-4 font-semibold">One-Step</td>
+              <td class="py-5 pr-4">
+                <ul class="chips space-y-1 text-muted" style="--chip:#8C3B2E">
+                  <li>Rinfrescare velocemente l'auto</li>
+                  <li>Restituire brillantezza alla vernice</li>
+                </ul>
+              </td>
+              <td class="py-5 font-serif text-lg text-right sm:text-left">150 €</td>
+            </tr>
+            <tr class="border-b border-hair align-top">
+              <td class="py-5 pr-4 font-semibold">Correzione 2 Fasi</td>
+              <td class="py-5 pr-4">
+                <ul class="chips space-y-1 text-muted" style="--chip:#C9A66B">
+                  <li>Elimina graffi e opacità</li>
+                  <li>Ideale per vetture scure</li>
+                </ul>
+              </td>
+              <td class="py-5 font-serif text-lg text-right sm:text-left">200 €</td>
+            </tr>
+            <tr class="border-b border-hair align-top">
+              <td class="py-5 pr-4 font-semibold">Coating Ceramico</td>
+              <td class="py-5 pr-4">
+                <ul class="chips space-y-1 text-muted" style="--chip:#5B5D63">
+                  <li>Ideale per auto nuove: protegge subito il trasparente</li>
+                  <li>Per fissare una correzione profonda</li>
+                </ul>
+              </td>
+              <td class="py-5 font-serif text-lg text-right sm:text-left">250 €</td>
+            </tr>
+            <tr class="align-top">
+              <td class="py-5 pr-4 font-semibold">Fari (ripristino)</td>
+              <td class="py-5 pr-4">
+                <ul class="chips space-y-1 text-muted" style="--chip:#9B966E">
+                  <li>Ripristina la trasparenza</li>
+                  <li>Protezione contro l'ingiallimento</li>
+                </ul>
+              </td>
+              <td class="py-5 font-serif text-lg text-right sm:text-left">30 €</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-24 border-t border-hair">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="eyebrow reveal">Domande frequenti</p>
+      <h2 class="mt-3 font-serif text-3xl sm:text-4xl reveal">Prima di scriverci</h2>
+
+      <div class="mt-10 divide-y divide-hair border-t border-hair">
+        <details class="faq group py-5 reveal">
+          <summary class="flex items-center justify-between gap-4">
+            <span class="font-serif text-lg">Quanto costa lucidare un'auto a Roma?</span>
+            <span class="plus text-oro text-xl leading-none">+</span>
+          </summary>
+          <p class="mt-3 text-muted max-w-2xl">One-Step da 150 €, correzione in 2 fasi da 200 €, coating ceramico da 250 €, ripristino fari da 30 €. Il prezzo finale dipende da dimensioni, colore e condizioni della vernice: mandaci le foto su WhatsApp per un preventivo gratuito.</p>
+        </details>
+        <details class="faq group py-5 reveal">
+          <summary class="flex items-center justify-between gap-4">
+            <span class="font-serif text-lg">Quanto dura il trattamento?</span>
+            <span class="plus text-oro text-xl leading-none">+</span>
+          </summary>
+          <p class="mt-3 text-muted max-w-2xl">Il sigillante One-Step dura in media 6 mesi, quello della correzione in 2 fasi circa 12 mesi; il coating ceramico fino a 24 mesi con una manutenzione corretta.</p>
+        </details>
+        <details class="faq group py-5 reveal">
+          <summary class="flex items-center justify-between gap-4">
+            <span class="font-serif text-lg">Lavorate anche a domicilio?</span>
+            <span class="plus text-oro text-xl leading-none">+</span>
+          </summary>
+          <p class="mt-3 text-muted max-w-2xl">Sì, in tutta Roma. Fuori dal GRA il prezzo può variare: chiedi la disponibilità quando prenoti.</p>
+        </details>
+        <details class="faq group py-5 reveal">
+          <summary class="flex items-center justify-between gap-4">
+            <span class="font-serif text-lg">La lucidatura rimuove tutti i graffi?</span>
+            <span class="plus text-oro text-xl leading-none">+</span>
+          </summary>
+          <p class="mt-3 text-muted max-w-2xl">Rimuove micrograffi e swirl. Per i segni profondi serve una valutazione dal vivo: non sempre è consigliata la carteggiatura.</p>
+        </details>
+        <details class="faq group py-5 reveal">
+          <summary class="flex items-center justify-between gap-4">
+            <span class="font-serif text-lg">Come si prenota?</span>
+            <span class="plus text-oro text-xl leading-none">+</span>
+          </summary>
+          <p class="mt-3 text-muted max-w-2xl">Mandaci su WhatsApp due o tre foto dell'auto alla luce del giorno, con marca e modello. Ti rispondiamo con un preventivo e una data.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contatti -->
+  <section id="contatti" class="py-24 border-t border-hair">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-14">
+        <div class="reveal">
+          <p class="eyebrow">Contatti</p>
+          <h2 class="mt-3 font-serif text-3xl sm:text-4xl">Parliamo della tua auto</h2>
+          <p class="mt-3 text-muted">Invia le foto su WhatsApp per un preventivo rapido oppure compila il modulo.</p>
+
+          <div class="mt-8 space-y-5 text-sm">
+            <div class="flex items-center gap-3">
+              <div class="h-9 w-9 rounded-lg border border-hair flex items-center justify-center" aria-hidden="true">📞</div>
+              <a href="tel:+393805826738" class="hover:text-oro transition">+39 380 582 6738</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="h-9 w-9 rounded-lg border border-hair flex items-center justify-center" aria-hidden="true">💬</div>
+              <a href="https://wa.me/393805826738?text=Ciao%20Lady%20Car%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener" class="hover:text-oro transition">Scrivici su WhatsApp</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="h-9 w-9 rounded-lg border border-hair flex items-center justify-center" aria-hidden="true">📍</div>
+              <p>Roma e dintorni, a domicilio</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="h-9 w-9 rounded-lg border border-hair flex items-center justify-center" aria-hidden="true">⏰</div>
+              <p>Lun–Sab: 9:00–19:00</p>
+            </div>
+          </div>
+        </div>
+
+        <form id="form" class="reveal space-y-5" action="https://formspree.io/f/mlgkbbkv" method="POST">
+          <input type="hidden" name="_subject" value="Nuova richiesta da lady-car.it">
+          <input type="hidden" name="sito" value="lady-car.it">
+          <div class="hp" aria-hidden="true"><label>Lascia vuoto<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+          <div>
+            <label for="f-nome" class="block text-xs uppercase tracking-widest text-muted mb-1">Nome</label>
+            <input id="f-nome" name="nome" required type="text" autocomplete="name" class="line w-full" placeholder="Il tuo nome" />
+          </div>
+          <div>
+            <label for="f-contatto" class="block text-xs uppercase tracking-widest text-muted mb-1">Telefono o email</label>
+            <input id="f-contatto" name="contatto" required type="text" autocomplete="tel" class="line w-full" placeholder="Contatto" />
+          </div>
+          <div>
+            <label for="f-auto" class="block text-xs uppercase tracking-widest text-muted mb-1">Modello auto</label>
+            <input id="f-auto" name="auto" type="text" class="line w-full" placeholder="Marca, modello, colore" />
+          </div>
+          <div>
+            <label for="f-servizio" class="block text-xs uppercase tracking-widest text-muted mb-1">Servizio richiesto</label>
+            <select id="f-servizio" name="servizio" class="line w-full">
               <option>One-Step</option>
-              <option>Correzione in 2 fasi</option>
-              <option>Coating ceramico</option>
+              <option>Correzione 2 Fasi</option>
+              <option>Coating Ceramico</option>
               <option>Ripristino fari</option>
-              <option>Non lo so, consigliatemi</option>
+              <option>Consulenza</option>
             </select>
-          </label>
-        </div>
-        <label>Messaggio<textarea name="messaggio" rows="4" placeholder="Com'è la vernice? Dove si trova l'auto?"></textarea></label>
-        <p class="legal">Usiamo i tuoi dati solo per risponderti. <a href="/privacy.html">Informativa privacy</a></p>
-        <button class="btn btn-pad" type="submit">Invia la richiesta</button>
-        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-      </form>
+          </div>
+          <div>
+            <label for="f-msg" class="block text-xs uppercase tracking-widest text-muted mb-1">Messaggio</label>
+            <textarea id="f-msg" name="messaggio" rows="4" class="line w-full" placeholder="Descrivi le condizioni dell'auto"></textarea>
+          </div>
+          <button type="submit" class="w-full rounded-full bg-rosso px-6 py-3.5 font-bold hover:bg-rossobright transition">Invia richiesta</button>
+          <p class="text-xs text-muted">Usiamo i tuoi dati solo per risponderti. Leggi l'<a href="/privacy.html" class="underline hover:text-oro">informativa privacy</a>.</p>
+          <p id="form-status" class="text-sm min-h-[1.25rem]" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </div>
   </section>
-</main>
 
-<footer>
-  <div class="wrap">
-    <div class="foot-brand"><img src="/img/logo.png" alt="Logo Lady Car" width="520" height="269" loading="lazy" decoding="async"><p>© <span id="y">2026</span> Lady Car<br>Detailing a domicilio a Roma</p></div>
-    <nav aria-label="Note legali">
-      <a href="/privacy.html">Privacy</a>
-      <a href="/privacy.html#cookie">Cookie</a>
-      <a href="#contatti">Contatti</a>
-    </nav>
-    <div class="site-credit"><a href="https://clickbari.it" target="_blank" rel="noopener">Sito realizzato da ClickBari</a></div>
+  <!-- CTA -->
+  <section class="py-20 border-t border-hair">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="reveal rounded-2xl bg-gradient-to-r from-rosso to-rossobright p-9 text-paper">
+        <div class="grid md:grid-cols-2 gap-6 items-center">
+          <div>
+            <h2 class="font-serif text-2xl sm:text-3xl">Pronto a far brillare la tua auto?</h2>
+            <p class="mt-2 text-paper/85">Scrivici su WhatsApp e ricevi un preventivo gratuito.</p>
+          </div>
+          <div class="md:text-right">
+            <a href="https://wa.me/393805826738?text=Ciao%20Lady%20Car%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener" class="inline-block rounded-full bg-ink text-paper px-7 py-3.5 font-bold hover:bg-panel transition">Contattaci ora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="py-10 text-sm text-muted border-t border-hair">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© <span id="year">2026</span> Lady Car — detailing a domicilio a Roma</p>
+      <nav class="flex items-center gap-6" aria-label="Note legali">
+        <a href="/privacy.html" class="hover:text-oro transition">Privacy</a>
+        <a href="/privacy.html#cookie" class="hover:text-oro transition">Cookie</a>
+        <a href="#contatti" class="hover:text-oro transition">Contatti</a>
+      </nav>
+    </div>
+    <div class="site-credit mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-6 pt-6 border-t border-hair text-center">
+      <a href="https://clickbari.it" target="_blank" rel="noopener">Sito realizzato da ClickBari</a>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/393805826738?text=Ciao%20Lady%20Car%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.7 2.2 13.9 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5C18.2 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
+  </a>
+
+  <div id="cookie" class="cookie items-center gap-3 rounded-xl bg-panel ring-1 ring-hair shadow-2xl px-4 py-3 text-sm text-paper/90" role="region" aria-label="Informativa cookie">
+    <p>Usiamo solo cookie tecnici, nessun tracciamento né pubblicità. <a href="/privacy.html#cookie" class="underline hover:text-oro">Dettagli</a></p>
+    <button type="button" id="cookie-ok" class="shrink-0 rounded-full bg-rosso px-4 py-2 font-bold hover:bg-rossobright transition">Ho capito</button>
   </div>
-</footer>
 
-<a class="wa-float" href="https://wa.me/393805826738?text=Ciao%20Lady%20Car%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.7 2.2 13.9 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5C18.2 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
-</a>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<div class="cookie" id="cookie" role="region" aria-label="Informativa cookie">
-  <p>Usiamo solo cookie tecnici, nessun tracciamento né pubblicità. <a href="/privacy.html#cookie">Dettagli</a></p>
-  <button type="button" id="cookie-ok">Ho capito</button>
-</div>
-
-<script>
-document.getElementById('y').textContent = new Date().getFullYear();
-
-// cookie notice (solo informativa: il sito usa unicamente cookie/storage tecnici)
-(function(){
-  var box = document.getElementById('cookie'), seen = null;
-  try { seen = localStorage.getItem('lc-cookie-ok'); } catch(e) {}
-  if (!seen) box.classList.add('show');
-  document.getElementById('cookie-ok').addEventListener('click', function(){
-    try { localStorage.setItem('lc-cookie-ok', '1'); } catch(e) {}
-    box.classList.remove('show');
-  });
-})();
-
-// form → Formspree
-(function(){
-  var form = document.getElementById('form'), status = document.getElementById('form-status');
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    var btn = form.querySelector('button[type=submit]');
-    btn.disabled = true; btn.textContent = 'Invio in corso…';
-    status.className = 'form-status'; status.textContent = '';
-    try {
-      var res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{ 'Accept':'application/json' } });
-      if (!res.ok) throw new Error();
-      form.reset();
-      status.className = 'form-status ok';
-      status.textContent = 'Richiesta inviata. Ti ricontattiamo al più presto.';
-    } catch(err) {
-      status.className = 'form-status err';
-      status.textContent = 'La richiesta non è partita. Riprova oppure scrivici su WhatsApp.';
-    } finally {
-      btn.disabled = false; btn.textContent = 'Invia la richiesta';
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: .12 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
     }
-  });
-})();
-</script>
+
+    // Avviso cookie: solo informativo (il sito usa unicamente storage tecnico)
+    (function(){
+      var box = document.getElementById('cookie'), seen = null;
+      try { seen = localStorage.getItem('lc-cookie-ok'); } catch(e) {}
+      if (!seen) box.classList.add('show');
+      document.getElementById('cookie-ok').addEventListener('click', function(){
+        try { localStorage.setItem('lc-cookie-ok', '1'); } catch(e) {}
+        box.classList.remove('show');
+      });
+    })();
+
+    // Modulo → Formspree
+    (function(){
+      var form = document.getElementById('form'), status = document.getElementById('form-status');
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        var btn = form.querySelector('button[type=submit]');
+        btn.disabled = true; btn.textContent = 'Invio in corso…';
+        status.textContent = ''; status.style.color = '';
+        try {
+          var res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{ 'Accept':'application/json' } });
+          if (!res.ok) throw new Error();
+          form.reset();
+          status.style.color = '#9BD8A6';
+          status.textContent = 'Richiesta inviata. Ti ricontattiamo al più presto.';
+        } catch(err) {
+          status.style.color = '#F2A08C';
+          status.textContent = 'La richiesta non è partita. Riprova oppure scrivici su WhatsApp.';
+        } finally {
+          btn.disabled = false; btn.textContent = 'Invia richiesta';
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

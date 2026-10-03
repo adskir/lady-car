@@ -26,8 +26,8 @@ def optimize(path):
     else:
         im.save(buf, "PNG", optimize=True)
     after = len(buf.getvalue())
-    # scrive solo se serve davvero: evita di ricomprimere all'infinito
-    if resized or had_exif or after < before * 0.95:
+    # ricomprime solo se serve davvero: ridimensionata, con EXIF, o file pesante (>300 KB)
+    if resized or had_exif or (before > 300 * 1024 and after < before * 0.9):
         with open(path, "wb") as f:
             f.write(buf.getvalue())
         print(f"{path}: {before//1024} KB -> {after//1024} KB")

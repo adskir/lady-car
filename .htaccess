@@ -6,7 +6,7 @@ RewriteCond %{HTTP_HOST} ^www\.lady-car\.it$ [NC]
 RewriteRule ^ https://lady-car.it%{REQUEST_URI} [L,R=301]
 
 # Non pubblicare file di servizio del repository
-RewriteRule ^(\.git|\.github|scripts|README\.md) - [F,L]
+RewriteRule ^(\.git|\.github|scripts|src|README\.md|tailwind\.config\.js) - [F,L]
 
 # Cache per immagini e font
 <IfModule mod_expires.c>
