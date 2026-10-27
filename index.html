@@ -659,8 +659,8 @@
           var res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{ 'Accept':'application/json' } });
           if (!res.ok) throw new Error();
           form.reset();
-          status.style.color = '#9BD8A6';
-          status.textContent = 'Richiesta inviata. Ti ricontattiamo al più presto.';
+          status.style.color = '#E8C27A';
+          status.textContent = 'Ci scusiamo, il servizio è temporaneamente non disponibile: il sito è in fase di sviluppo.';
         } catch(err) {
           status.style.color = '#F2A08C';
           status.textContent = 'La richiesta non è partita. Riprova oppure scrivici su WhatsApp.';
