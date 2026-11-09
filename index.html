@@ -288,19 +288,23 @@ footer nav{display:flex;gap:22px}
 
 .wa-float{position:fixed;right:18px;bottom:18px;z-index:50;width:58px;height:58px;border-radius:50%;background:var(--pad);display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.35)}
 .wa-float svg{width:28px;height:28px;fill:#130700}
-/* ---------- plaque + menu ---------- */
+/* ---------- plaque + header fissi in alto ---------- */
+body{padding-top:28px}
+.top{position:fixed;top:0;left:0;right:0;z-index:61}
 .dev{margin:0;height:28px;display:flex;align-items:center;justify-content:center;background:#14181D;color:#9AA2A8;font-size:12.5px;letter-spacing:.02em;border-bottom:1px solid #23292f}
 .dev a{color:var(--nastro);text-decoration:none}.dev a:hover{text-decoration:underline}
-.bar{top:28px}
-.bar .wrap{gap:20px}
-.burger{display:none;width:48px;height:48px;margin-right:-10px;border:0;background:transparent;color:inherit;cursor:pointer;position:relative;z-index:61}
+.top .bar{position:relative;inset:auto;transition:background-color .25s,color .25s}
+.top .bar .wrap{gap:20px;transition:height .25s}
+.top.solid .bar,body.menu-open .top .bar{background:rgba(6,8,11,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--chiaro)}
+.top.solid .bar .wrap{height:64px}
+section[id]{scroll-margin-top:96px}
+.burger{display:none;width:48px;height:48px;margin-right:-10px;border:0;background:transparent;color:inherit;cursor:pointer;position:relative}
 .burger span{position:absolute;left:12px;right:12px;height:2px;background:currentColor;border-radius:1px;transition:transform .2s,opacity .2s}
 .burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:23px}.burger span:nth-child(3){top:30px}
-.burger[aria-expanded="true"]{color:var(--chiaro)}
 .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
 .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.menu{position:fixed;inset:0;z-index:60;background:var(--lacca);color:var(--chiaro);padding:110px 28px 32px;display:flex;flex-direction:column;overflow-y:auto}
+.menu{position:fixed;inset:0;z-index:60;background:var(--lacca);color:var(--chiaro);padding:116px 28px 32px;display:flex;flex-direction:column;overflow-y:auto}
 .menu[hidden]{display:none}
 .menu nav{display:flex;flex-direction:column;border-top:1px solid #23292f;margin-bottom:28px}
 .menu nav a{text-decoration:none;font-stretch:var(--wide);font-weight:700;font-size:24px;letter-spacing:-.01em;padding:16px 0;border-bottom:1px solid #23292f}
@@ -308,19 +312,23 @@ footer nav{display:flex;gap:22px}
 .menu .btn{justify-content:center}
 .menu-note{margin-top:14px;font-size:14px;color:#8E969C}
 body.menu-open{overflow:hidden}
-body.menu-open .bar{position:fixed;z-index:61;color:var(--chiaro)}
 @media (max-width:900px){
+  body{padding-top:92px}
   .bar .nav-desk{display:none}.burger{display:block}
-  .bar{position:sticky;top:0;background:rgba(6,8,11,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-  .bar .wrap{height:64px}
-  body.menu-open .bar{position:sticky}
-  .menu{padding-top:88px}
-  section[id]{scroll-margin-top:64px}
+  .top .bar{background:rgba(6,8,11,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--chiaro)}
+  .top .bar .wrap{height:64px}
 }
+/* ---------- avviso cookie (solo informativo) ---------- */
+.cookie{position:fixed;left:18px;bottom:18px;z-index:55;max-width:440px;display:none;align-items:center;gap:14px;padding:14px 16px;background:var(--lacca-2);color:#D5D9DC;border-radius:var(--r-m);box-shadow:0 0 0 1px #2a3036,0 16px 40px rgba(0,0,0,.4);font-size:14px;line-height:1.45}
+.cookie.show{display:flex}
+.cookie a{color:var(--nastro)}
+.cookie button{flex:none;font:inherit;font-weight:650;font-size:14px;height:40px;padding:0 16px;border:0;border-radius:var(--r-s);background:var(--chiaro);color:var(--lacca);cursor:pointer}
+@media (max-width:600px){.cookie{right:88px;left:12px;bottom:12px;flex-direction:column;align-items:stretch}}
 </style>
 </head>
 <body>
 
+<div class="top" id="topbar">
 <p class="dev">Sito in fase di sviluppo · <a href="https://clickbari.it" target="_blank" rel="noopener">clickbari.it</a></p>
 <header class="bar">
   <div class="wrap">
@@ -336,6 +344,7 @@ body.menu-open .bar{position:fixed;z-index:61;color:var(--chiaro)}
     <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu"><span></span><span></span><span></span></button>
   </div>
 </header>
+</div>
 <div class="menu" id="menu" hidden>
   <nav aria-label="Menu">
     <a href="#difetti">Difetti della vernice</a>
@@ -634,9 +643,14 @@ body.menu-open .bar{position:fixed;z-index:61;color:var(--chiaro)}
 <footer>
   <div class="wrap">
     <p>© <span id="y">2026</span> Roma Auto Polish · Lucidatura e detailing a domicilio a Roma</p>
-    <nav><a href="/privacy.html">Privacy</a><a href="/privacy.html#cookie">Cookie</a><a href="https://clickbari.it" target="_blank" rel="noopener">Sito di ClickBari</a></nav>
+    <nav><a href="/privacy.html">Privacy policy</a><a href="/privacy.html#cookie">Cookie policy</a><a href="https://clickbari.it" target="_blank" rel="noopener">Sito di ClickBari</a></nav>
   </div>
 </footer>
+
+<div class="cookie" id="cookie" role="region" aria-label="Informativa cookie">
+  <p style="margin:0">Usiamo solo cookie tecnici: niente statistiche, pubblicità o tracciamento. <a href="/privacy.html#cookie">Dettagli</a></p>
+  <button type="button" id="cookie-ok">Ho capito</button>
+</div>
 
 <a class="wa-float" href="https://wa.me/393805826738?text=Ciao%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
 
@@ -799,6 +813,19 @@ burger.addEventListener('click',()=>setMenu(burger.getAttribute('aria-expanded')
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(a.getAttribute('href').startsWith('#'))setMenu(false)}));
 menu.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
 addEventListener('resize',()=>{if(innerWidth>900&&!menu.hidden)setMenu(false)});
+
+
+/* ===== header: diventa scuro quando scorri ===== */
+const topbar=document.getElementById('topbar');let sraf=0;
+function onScroll(){sraf=0;topbar.classList.toggle('solid',scrollY>40)}
+addEventListener('scroll',()=>{if(!sraf)sraf=requestAnimationFrame(onScroll)},{passive:true});onScroll();
+
+/* ===== avviso cookie: solo informativo, il sito usa unicamente storage tecnico ===== */
+(function(){const box=document.getElementById('cookie');let seen=null;
+  try{seen=localStorage.getItem('lc-cookie-ok')}catch(e){}
+  if(!seen)box.classList.add('show');
+  document.getElementById('cookie-ok').addEventListener('click',()=>{try{localStorage.setItem('lc-cookie-ok','1')}catch(e){}box.classList.remove('show')});
+})();
 
 /* ===== modulo ===== */
 const form=document.getElementById('form'),st=document.getElementById('form-status');
