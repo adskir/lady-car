@@ -28,6 +28,7 @@
 {"@type":"Offer","itemOffered":{"@type":"Service","name":"Coating ceramico"},"priceSpecification":{"@type":"PriceSpecification","minPrice":250,"priceCurrency":"EUR"}},
 {"@type":"Offer","itemOffered":{"@type":"Service","name":"Ripristino fari"},"priceSpecification":{"@type":"PriceSpecification","minPrice":30,"priceCurrency":"EUR"}}]}},
 {"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Quanto costa una lucidatura auto a Roma?","acceptedAnswer":{"@type":"Answer","text":"Si parte da 150 € per una citycar con il One-Step. La correzione in 2 fasi parte da 200 €, il coating ceramico da 250 € in più della correzione. Il prezzo cambia con le dimensioni dell'auto e lo stato della vernice."}},
 {"@type":"Question","name":"Quanto dura il risultato?","acceptedAnswer":{"@type":"Answer","text":"Il sigillante del One-Step tiene circa 6 mesi, quello della correzione circa 12. Il coating ceramico arriva a 24 mesi se lavi l'auto a mano e senza spazzole."}},
 {"@type":"Question","name":"La lucidatura toglie tutti i graffi?","acceptedAnswer":{"@type":"Answer","text":"Toglie swirl, ologrammi e micrograffi. Un graffio che blocca l'unghia è più profondo del trasparente: si attenua, ma resta visibile. Lo vediamo dalle foto e te lo diciamo prima."}},
 {"@type":"Question","name":"La lucidatura consuma la vernice?","acceptedAnswer":{"@type":"Answer","text":"Toglie pochi micron di trasparente, la parte che si è rovinata. Per questo non lucidiamo più del necessario: su un'auto quasi nuova basta un passaggio leggero."}},
@@ -36,6 +37,7 @@
 ]}
 </script>
 
+<link rel="preload" as="image" href="img/hero-auto.webp" imagesrcset="img/hero-auto-m.webp 960w, img/hero-auto.webp 1920w" imagesizes="100vw" fetchpriority="high">
 <link rel="preload" href="fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:"Archivo";src:url(fonts/archivo-var.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
@@ -45,7 +47,7 @@
   --primer:#CED1D3;     /* fondo grigio */
   --primer-2:#BFC3C6;
   --grafite:#23272B;
-  --nebbia:#5E656B;
+  --nebbia:#474D53;
   --nastro:#E5D99B;     /* nastro carta */
   --pad:#EE6A1F;        /* tampone arancio */
   --chiaro:#F4F5F5;
@@ -93,7 +95,7 @@ p{margin:0}
 .bef,.fx{opacity:0;transition:opacity .4s}
 .stage.ready .bef,.stage.ready .fx{opacity:1}
 .bef,.swl{clip-path:inset(0 calc(100% - var(--sx,50%)) 0 0)}
-.fx{position:absolute;inset:0;overflow:hidden;pointer-events:none;mix-blend-mode:screen;-webkit-mask-size:cover;mask-size:cover;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.fx{position:absolute;inset:0;overflow:hidden;pointer-events:none;mix-blend-mode:screen;-webkit-mask-image:url(img/hero-auto-maschera.png);mask-image:url(img/hero-auto-maschera.png);-webkit-mask-size:cover;mask-size:cover;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
 .shn{clip-path:inset(0 0 0 var(--sx,50%))}
 #spr{position:absolute;left:0;top:0;height:110%;width:auto;aspect-ratio:1;will-change:transform}
 .shn i{position:absolute;top:0;bottom:0;left:0;width:16%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.26),rgba(255,255,255,0));will-change:transform}
@@ -365,9 +367,9 @@ body.menu-open{overflow:hidden}
 <section class="hero" aria-label="Prima e dopo la lucidatura">
   <div class="hero-copy"><div class="wrap"><h1>Lucidatura auto a Roma</h1></div></div>
   <div class="stage" id="stage">
-    <img class="ph" src="img/hero-auto.webp" alt="Fiancata di un'auto nera: a sinistra vernice opaca e piena di swirl, a destra dopo la correzione" width="1920" height="1200" fetchpriority="high">
-    <canvas class="ph bef" id="bef" aria-hidden="true"></canvas>
-    <div class="fx swl" id="swl" aria-hidden="true"><canvas id="spr"></canvas></div>
+    <img class="ph" src="img/hero-auto.webp" srcset="img/hero-auto-m.webp 960w, img/hero-auto.webp 1920w" sizes="100vw" alt="Fiancata di un'auto nera: a sinistra vernice opaca e piena di swirl, a destra dopo la correzione" width="1920" height="1200" fetchpriority="high">
+    <img class="ph bef" id="bef" src="img/hero-auto-prima.webp" srcset="img/hero-auto-prima-m.webp 960w, img/hero-auto-prima.webp 1920w" sizes="100vw" fetchpriority="low" alt="" aria-hidden="true" width="1920" height="1200" decoding="async">
+    <div class="fx swl" id="swl" aria-hidden="true"><img id="spr" src="img/hero-auto-swirl.webp" fetchpriority="low" alt="" width="840" height="840" decoding="async"></div>
     <div class="fx shn" id="shn" aria-hidden="true"><i></i></div>
     <p class="tag l"><b>Prima</b>opaca, swirl</p>
     <p class="tag r"><b>Dopo</b>correzione 2 fasi</p>
@@ -375,7 +377,7 @@ body.menu-open{overflow:hidden}
   </div>
   <div class="hero-foot">
     <div class="wrap">
-      <p class="hero-sub">Detailing a domicilio: correzione della vernice, coating ceramico, ripristino fari. Veniamo noi, dentro il GRA.</p>
+      <p class="hero-sub">Detailing a domicilio a Roma: correzione della vernice, coating ceramico, ripristino fari. Veniamo noi, dentro il GRA.</p>
       <div>
         <div class="hero-actions">
           <a class="btn btn-pad" href="https://wa.me/393805826738?text=Ciao%2C%20vi%20mando%20le%20foto%20della%20mia%20auto%20per%20un%20preventivo" target="_blank" rel="noopener">
@@ -517,8 +519,8 @@ body.menu-open{overflow:hidden}
 <section id="listino">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Listino</h2>
-      <p class="lead">Prezzi di partenza per una citycar. Ogni lavoro include lavaggio a mano, decontaminazione e mascheratura di plastiche e guarnizioni.</p>
+      <h2>Prezzi della lucidatura auto</h2>
+      <p class="lead">Prezzi di partenza per una citycar a Roma. Ogni lavoro include lavaggio a mano, decontaminazione e mascheratura di plastiche e guarnizioni.</p>
     </div>
     <table class="list-table">
       <thead><tr><th>Servizio</th><th>Cosa risolve</th><th>Tempo</th><th style="text-align:right">Da</th></tr></thead>
@@ -584,7 +586,7 @@ body.menu-open{overflow:hidden}
       <g><circle cx="608" cy="440" r="4" fill="#5E656B"/><text x="540" y="470" fill="#5E656B">Castelli Romani</text><text x="540" y="487" fill="#5E656B">su richiesta</text></g>
     </svg>
     <div>
-      <h2>Veniamo noi</h2>
+      <h2>Lucidatura a domicilio in tutta Roma</h2>
       <p class="lead" style="margin-top:20px">Lavoriamo dove tieni l'auto, in tutta Roma dentro il Raccordo. Fuori dal GRA si può fare, con un piccolo supplemento.</p>
       <ul class="need">
         <li><b>Spazio</b><span>Garage, box o cortile. All'aperto solo all'ombra.</span></li>
@@ -601,7 +603,8 @@ body.menu-open{overflow:hidden}
   <div class="wrap faq-wrap">
     <h2>Domande che ci fanno spesso</h2>
     <div>
-      <details open><summary>Quanto dura il risultato?</summary><p>Il sigillante del One-Step tiene circa 6 mesi, quello della correzione circa 12. Il coating ceramico arriva a 24 mesi se lavi l'auto a mano e senza spazzole.</p></details>
+      <details open><summary>Quanto costa una lucidatura auto a Roma?</summary><p>Si parte da 150 € per una citycar con il One-Step. La correzione in 2 fasi parte da 200 €, il coating ceramico da 250 € in più della correzione. Il prezzo cambia con le dimensioni dell'auto e lo stato della vernice: prova il calcolatore qui sopra o mandaci due foto su WhatsApp.</p></details>
+      <details><summary>Quanto dura il risultato?</summary><p>Il sigillante del One-Step tiene circa 6 mesi, quello della correzione circa 12. Il coating ceramico arriva a 24 mesi se lavi l'auto a mano e senza spazzole.</p></details>
       <details><summary>La lucidatura toglie tutti i graffi?</summary><p>Toglie swirl, ologrammi e micrograffi. Un graffio che blocca l'unghia è più profondo del trasparente: si attenua, ma resta visibile. Lo vediamo dalle foto e te lo diciamo prima.</p></details>
       <details><summary>La lucidatura consuma la vernice?</summary><p>Toglie pochi micron di trasparente, la parte che si è rovinata. Per questo non lucidiamo più del necessario: su un'auto quasi nuova basta un passaggio leggero.</p></details>
       <details><summary>Devo essere presente?</summary><p>Solo all'inizio e alla consegna. Il controllo finale lo facciamo insieme, con la luce, pannello per pannello.</p></details>
@@ -657,93 +660,15 @@ body.menu-open{overflow:hidden}
 <script>
 (function(){
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
-function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
-
-/* ===== motore vernice: disegna un pannello nero sotto una luce puntiforme ===== */
-function makeScratches(n,seed,maxR){
-  const r=rng(seed),a=[];
-  for(let i=0;i<n;i++){
-    const rad=Math.pow(r(),.75)*maxR;
-    a.push({rad,a0:r()*Math.PI*2,len:(.04+r()*.22)*(1-rad/maxR*.5),w:.5+r()*.9,k:.35+r()*.65,hue:r()});
-  }
-  return a;
-}
-function paintBase(g,w,h){
-  const bg=g.createLinearGradient(0,0,0,h);
-  bg.addColorStop(0,'#0b0e12');bg.addColorStop(.42,'#06080b');bg.addColorStop(.47,'#161b21');bg.addColorStop(.5,'#07090c');bg.addColorStop(1,'#030405');
-  g.fillStyle=bg;g.fillRect(0,0,w,h);
-}
-// riflesso di un softbox: cosa vede l'occhio su vernice perfetta
-function reflection(g,lx,ly,s,sharp){
-  // riflesso di una lampada a pannello (softbox) sulla carrozzeria
-  g.save();
-  const halo=g.createRadialGradient(lx,ly,0,lx,ly,s*3);
-  halo.addColorStop(0,sharp?'rgba(170,190,210,.16)':'rgba(190,200,210,.26)');halo.addColorStop(1,'rgba(190,205,220,0)');
-  g.fillStyle=halo;g.fillRect(lx-s*3,ly-s*3,s*6,s*6);
-  g.translate(lx,ly);g.rotate(-.06);
-  const w=s*2.3,h=s*.62;
-  if(sharp){
-    g.shadowColor='rgba(220,235,255,.8)';g.shadowBlur=s*.12;
-    g.fillStyle='rgba(250,252,255,.97)';
-    g.beginPath();g.roundRect(-w/2,-h/2,w,h,h*.22);g.fill();
-    g.shadowBlur=0;g.fillStyle='rgba(6,8,11,.55)';
-    g.fillRect(-w/2+w*.333,-h/2,1.5,h);g.fillRect(-w/2+w*.666,-h/2,1.5,h);
-  }else{
-    g.filter='blur('+Math.round(s*.16)+'px)';
-    g.fillStyle='rgba(225,230,236,.62)';
-    g.beginPath();g.roundRect(-w/2,-h/2,w,h,h*.3);g.fill();
-    g.filter='none';
-  }
-  g.restore();
-}
-// swirl: graffi circolari che si accendono intorno alla luce
-function swirls(g,lx,ly,list,maxR,gain,rainbow){
-  g.save();g.globalCompositeOperation='lighter';g.lineCap='round';
-  for(const s of list){
-    const f=Math.exp(-s.rad/(maxR*.2))*s.k*gain;
-    if(f<.02)continue;
-    g.lineWidth=s.w;
-    if(rainbow){const hh=(s.hue*360+s.rad*1.3)%360;g.strokeStyle=`hsla(${hh},70%,70%,${f*.9})`}
-    else g.strokeStyle=`rgba(225,232,240,${f})`;
-    g.beginPath();g.arc(lx,ly,s.rad,s.a0,s.a0+s.len);g.stroke();
-  }
-  g.restore();
-}
-
-function mk(w,h){const c=document.createElement('canvas');c.width=w;c.height=h;return c}
 
 /* ===== HERO: auto vera, test 50/50 =====
-   Tutto il lavoro pesante si fa una volta sola: la versione "prima" e gli swirl
-   vengono preparati all'apertura; durante l'animazione si spostano solo dei livelli. */
+   La versione "prima", la maschera della carrozzeria e gli swirl sono immagini
+   preparate in anticipo (img/hero-auto-*): qui si spostano solo i livelli. */
 const stage=document.getElementById('stage'),tape=document.getElementById('tape');
-const befC=document.getElementById('bef'),swl=document.getElementById('swl'),shn=document.getElementById('shn');
-const sprC=document.getElementById('spr'),band=shn.querySelector('i');
-const photo=new Image();photo.decoding='async';photo.src='img/hero-auto.webp';
-const BODY={x0:70,x1:1850,y0:380,y1:860}; // carrozzeria nella foto 1920x1200
+const sprC=document.getElementById('spr'),shn=document.getElementById('shn'),band=shn.querySelector('i');
 let split=.5,pointer=null,SW=0,SH=0,vis=false,raf=0;
-function prepare(){
-  const nw=photo.naturalWidth,nh=photo.naturalHeight;
-  const c=mk(nw,nh),cg=c.getContext('2d');cg.drawImage(photo,0,0);
-  const d=cg.getImageData(0,0,nw,nh),p=d.data;
-  const mw=nw>>1,mh=nh>>1,mc=mk(mw,mh),mcg=mc.getContext('2d'),md=mcg.createImageData(mw,mh),m=md.data;
-  for(let y=0;y<nh;y++){const inY=y>BODY.y0&&y<BODY.y1;for(let x=0;x<nw;x++){
-    const i=(y*nw+x)*4,l=.3*p[i]+.59*p[i+1]+.11*p[i+2];
-    const a=(inY&&x>BODY.x0&&x<BODY.x1)?Math.max(0,Math.min(1,(110-l)/50)):0;
-    const k=a*.85; // vernice ossidata: neri lattiginosi, riflessi spenti
-    p[i]=p[i]*(1-k)+(64+p[i]*.52)*k;p[i+1]=p[i+1]*(1-k)+(64+p[i+1]*.52)*k;p[i+2]=p[i+2]*(1-k)+(66+p[i+2]*.52)*k;
-    if(!(x&1)&&!(y&1)){const j=((y>>1)*mw+(x>>1))*4;m[j]=m[j+1]=m[j+2]=0;m[j+3]=a*255}
-  }}
-  befC.width=nw;befC.height=nh;befC.getContext('2d').putImageData(d,0,0);
-  mcg.putImageData(md,0,0);
-  const url='url('+mc.toDataURL('image/png')+')';
-  for(const el of [swl,shn]){el.style.webkitMaskImage=url;el.style.maskImage=url}
-  // swirl disegnati una volta, attorno al centro: lo sprite segue la luce
-  const R=560;sprC.width=sprC.height=2*R;const sg=sprC.getContext('2d');
-  const hz=sg.createRadialGradient(R,R,0,R,R,R*.65);hz.addColorStop(0,'rgba(210,215,222,.35)');hz.addColorStop(1,'rgba(210,215,222,0)');
-  sg.fillStyle=hz;sg.fillRect(0,0,2*R,2*R);
-  swirls(sg,R,R,makeScratches(innerWidth<900?1000:2200,7,R),R,1.6,false);
-  stage.classList.add('ready');measure();kick();
-}
+Promise.all(['bef','spr'].map(id=>{const im=document.getElementById(id);return im.decode?im.decode().catch(()=>{}):Promise.resolve()}))
+  .then(()=>{stage.classList.add('ready');measure();kick()});
 function measure(){SW=stage.clientWidth;SH=stage.clientHeight}
 function placeTape(){stage.style.setProperty('--sx',(split*100)+'%');tape.setAttribute('aria-valuenow',Math.round(split*100))}
 let lastT=0;
@@ -763,7 +688,6 @@ function kick(){if(!raf&&vis&&stage.classList.contains('ready'))raf=requestAnima
 new IntersectionObserver(e=>{vis=e[0].intersectionRatio>0;kick()},{threshold:[0,.01]}).observe(stage);
 document.addEventListener('visibilitychange',kick);
 addEventListener('resize',()=>{measure();kick()});
-photo.onload=prepare;if(photo.complete&&photo.naturalWidth)prepare();
 placeTape();
 stage.addEventListener('pointermove',e=>{if(e.pointerType==='mouse'){const r=stage.getBoundingClientRect();pointer={x:e.clientX-r.left,y:e.clientY-r.top};kick()}});
 stage.addEventListener('pointerleave',()=>{pointer=null;kick()});
