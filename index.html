@@ -144,7 +144,7 @@ section{padding:120px 0}
 .d-list li[aria-current] button{padding-left:18px;box-shadow:inset 4px 0 0 var(--lacca)}
 .d-list li[aria-current] p{display:block}
 .d-list li[aria-current] em{color:var(--grafite);font-weight:600}
-.d-photo{position:sticky;top:24px;margin:0}
+.d-photo{position:sticky;top:116px;margin:0}
 .d-photo img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 40%;border-radius:var(--r-s);display:block}
 .d-photo figcaption{margin-top:10px;font-size:14px;color:var(--nebbia)}
 
@@ -181,27 +181,37 @@ section{padding:120px 0}
 /* ---------- calcolatore ---------- */
 .calc{background:var(--lacca);color:var(--chiaro)}
 .calc .lead{color:#9AA2A8}
-.calc-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr);gap:48px}
+.calc-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr);gap:48px;align-items:start}
 @media (max-width:960px){.calc-grid{grid-template-columns:1fr}}
-fieldset{border:0;margin:0 0 34px;padding:0}
-legend{font-size:15px;color:#9AA2A8;margin-bottom:12px;padding:0}
-legend b{color:var(--chiaro);font-weight:600;margin-right:8px}
-.opts{display:flex;flex-wrap:wrap;gap:8px}
-.opt{position:relative}
+/* domande del calcolatore: una riga per domanda, risposte di pari larghezza */
+#calc{border-top:1px solid #262c32}
+fieldset{border:0;margin:0;padding:22px 0 24px;border-bottom:1px solid #262c32}
+legend{float:left;width:100%;padding:0;margin:0 0 14px;font-size:16px;font-weight:600;color:var(--chiaro);display:flex;align-items:center;gap:12px;line-height:1.25}
+legend b{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--nastro);color:#221d0b;font-stretch:var(--wide);font-weight:800;font-size:14px}
+.opts{clear:both;display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:8px}
+.opt{position:relative;display:block;min-width:0}
 .opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.opt span{display:block;padding:13px 18px;border-radius:var(--r-s);box-shadow:inset 0 0 0 1px #343a41;font-size:15.5px;line-height:1.25;cursor:pointer;transition:box-shadow .12s,background .12s}
-.opt span small{display:block;color:#8C949A;font-size:13px;margin-top:3px}
+.opt span{display:flex;flex-direction:column;justify-content:center;height:100%;min-height:62px;padding:11px 14px 11px 38px;position:relative;border-radius:var(--r-s);box-shadow:inset 0 0 0 1px #3a4148;font-size:15.5px;font-weight:600;line-height:1.25;color:var(--chiaro);cursor:pointer;transition:box-shadow .12s,background .12s}
+.opt span::before{content:"";position:absolute;left:14px;top:50%;width:14px;height:14px;margin-top:-7px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #6c757d}
+.opt span small{display:block;color:#A3ABB1;font-size:13px;font-weight:400;margin-top:3px}
+.opt:hover span{box-shadow:inset 0 0 0 1px #8C949A}
 .opt input:checked+span{background:var(--chiaro);color:var(--lacca);box-shadow:none}
-.opt input:checked+span small{color:#4f565c}
+.opt input:checked+span::before{box-shadow:inset 0 0 0 4px var(--lacca)}
+.opt input:checked+span small{color:#474D53}
 .opt input:focus-visible+span{outline:2px solid var(--pad);outline-offset:2px}
-.ticket{position:sticky;top:24px;background:var(--nastro);color:#221d0b;border-radius:var(--r-s);padding:30px 30px 26px;transform:rotate(-.6deg);box-shadow:0 20px 50px rgba(0,0,0,.4)}
-.ticket .lbl{font-size:14px;color:#5d5532}
-.ticket .price{white-space:nowrap;font-stretch:var(--wide);font-weight:800;font-size:clamp(40px,4.6vw,64px);letter-spacing:-.03em;line-height:1;margin:8px 0 4px;font-variant-numeric:tabular-nums}
-.ticket dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:22px 0 24px;font-size:15px;border-top:1px dashed rgba(34,29,11,.35);padding-top:18px}
-.ticket dt{color:#5d5532}.ticket dd{margin:0;text-align:right;font-weight:600}
+@media (max-width:560px){.opts{grid-template-columns:1fr}.opts[data-m="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}.opt span{min-height:54px}
+  .ticket{padding:24px 22px 20px}.ticket dd{white-space:nowrap}.ticket dl{font-size:15px;grid-template-columns:1fr auto}.ticket .btn{font-size:15px;padding:0 14px}}
+@media (max-width:960px){.ticket{position:static;transform:none}}
+/* scontrino col prezzo */
+.ticket{position:sticky;top:128px;align-self:start;background:var(--nastro);color:#1d1906;border-radius:var(--r-s);padding:28px 28px 24px;transform:rotate(-.6deg);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.ticket .lbl{font-size:15px;color:#3b3519;font-weight:500}
+.ticket .price{white-space:nowrap;font-stretch:var(--wide);font-weight:800;font-size:clamp(34px,3.7vw,56px);letter-spacing:-.03em;line-height:1;margin:8px 0 6px;font-variant-numeric:tabular-nums}
+.ticket #summary{font-size:16px;color:#1d1906;font-weight:600}
+.ticket dl{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;margin:20px 0 22px;font-size:16px;border-top:1.5px dashed rgba(29,25,6,.45);padding-top:18px}
+.ticket dt{color:#3b3519}.ticket dd{margin:0;text-align:right;font-weight:700;color:#1d1906}
 .ticket .btn{width:100%;justify-content:center;background:var(--lacca);color:var(--chiaro)}
 .ticket .btn:hover{background:#1d232a}
-.ticket .fine{font-size:13px;color:#5d5532;margin-top:14px}
+.ticket .fine{font-size:14px;line-height:1.45;color:#3b3519;margin-top:14px}
 
 /* ---------- listino ---------- */
 .list-table{width:100%;border-collapse:collapse;font-size:16px}
@@ -468,7 +478,7 @@ body.menu-open{overflow:hidden}
       <form id="calc" onsubmit="return false">
         <fieldset>
           <legend><b>1</b>Che auto è?</legend>
-          <div class="opts">
+          <div class="opts" data-m="2" style="--n:4">
             <label class="opt"><input type="radio" name="size" value="1" data-l="Citycar"><span>Citycar<small>Fiat 500, Mini, Yaris</small></span></label>
             <label class="opt"><input type="radio" name="size" value="1.2" data-l="Berlina o coupé" checked><span>Berlina o coupé<small>Serie 3, Classe C, A4</small></span></label>
             <label class="opt"><input type="radio" name="size" value="1.4" data-l="SUV o station"><span>SUV o station<small>X3, GLC, Macan</small></span></label>
@@ -477,7 +487,7 @@ body.menu-open{overflow:hidden}
         </fieldset>
         <fieldset>
           <legend><b>2</b>Com'è la vernice?</legend>
-          <div class="opts">
+          <div class="opts" data-m="1" style="--n:3">
             <label class="opt"><input type="radio" name="cond" value="1" data-l="quasi nuova"><span>Quasi nuova<small>pochi segni, solo opaca</small></span></label>
             <label class="opt"><input type="radio" name="cond" value="1.1" data-l="swirl visibili" checked><span>Swirl visibili<small>ragnatele al sole</small></span></label>
             <label class="opt"><input type="radio" name="cond" value="1.25" data-l="molto segnata"><span>Molto segnata<small>ologrammi, graffi diffusi</small></span></label>
@@ -485,7 +495,7 @@ body.menu-open{overflow:hidden}
         </fieldset>
         <fieldset>
           <legend><b>3</b>Che lavoro vuoi?</legend>
-          <div class="opts">
+          <div class="opts" data-m="1" style="--n:3">
             <label class="opt"><input type="radio" name="svc" value="one" data-l="Lucidatura One-Step"><span>One-Step<small>brillantezza, sigillante 6 mesi</small></span></label>
             <label class="opt"><input type="radio" name="svc" value="two" data-l="Correzione 2 fasi" checked><span>Correzione 2 fasi<small>via swirl e ologrammi, 12 mesi</small></span></label>
             <label class="opt"><input type="radio" name="svc" value="cer" data-l="Correzione + coating ceramico"><span>Correzione + ceramico<small>protezione fino a 24 mesi</small></span></label>
@@ -493,9 +503,9 @@ body.menu-open{overflow:hidden}
         </fieldset>
         <fieldset>
           <legend><b>4</b>Anche i fari?</legend>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="fari" value="0" data-l="" checked><span>No</span></label>
-            <label class="opt"><input type="radio" name="fari" value="1" data-l="ripristino fari"><span>Sì, sono gialli o opachi</span></label>
+          <div class="opts" data-m="2" style="--n:3">
+            <label class="opt"><input type="radio" name="fari" value="0" data-l="" checked><span>No<small>solo carrozzeria</small></span></label>
+            <label class="opt"><input type="radio" name="fari" value="1" data-l="ripristino fari"><span>Sì, sono gialli<small>+ da 30 € la coppia</small></span></label>
           </div>
         </fieldset>
       </form>
